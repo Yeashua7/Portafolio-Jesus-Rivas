@@ -27,7 +27,7 @@ Metodología BEM para nomenclatura de clases CSS
 
 🚀 Instalación y Uso
 Clona este repositorio:
-git clone https://github.com/Yesshua/Proyecto-final-alura
+git clone https://github.com/Yesshua/Portafolio-Jesus-Rivas
 
 Abre el archivo index.html en tu navegador web preferido.
 🔗 Enlaces
