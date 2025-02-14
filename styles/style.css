@@ -84,19 +84,19 @@ body{
     font-size: 1.5rem;
 }
 .presentacion__enlaces__link{
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      border: 2px solid var(--color-terciaria);
-      width: 50%;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 1.5rem;
-      font-weight: 600;
-      padding: 21.5px 0;
-      text-decoration: none;
-      color: var(--color-secundaria);
-      font-family: var(--fuente-montserrat);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--color-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--color-secundaria);
+    font-family: var(--fuente-montserrat);
 }
 
 .presentacion__enlaces__link:hover{
@@ -120,7 +120,7 @@ body{
 @media (max-width: 1200px) {
 
     .header{
-         padding: 10%;  
+        padding: 10%;  
     }
     .header__menu{
         justify-content: center;
