@@ -1,57 +1,184 @@
 <!DOCTYPE html>
-<html lang="es-sv">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Jesús Rivas</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-    <nav class="header__menu">
-        <a class="header__menu__link" href="index.html">Home</a>
-        <a class="header__menu__link" href="about.html">Sobre mí</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><span class="logo-text">JR</span></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="about.html" class="nav-link active">Sobre Mí</a></li>
+                <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-    </header>
-    <main class="presentacion">
-    <section class="presentacion__contenido">
-        <h1 class="presentacion__contenido__titulo">Sobre mí</h1>
-        <p class="presentacion__contenido__texto">
-        ¡Hola! Soy Jesus Rivas, un apasionado desarrollador Back-end Junior especializado en JavaScript, 
-        HTML y CSS. Mi misión es transformar ideas innovadoras en soluciones digitales efectivas, ayudando a
-        pequeños negocios y diseñadores a establecer una sólida presencia en línea. 
-        Como desarrollador, me destaco por: 
-        <p class="presentacion__contenido__texto">* Crear soluciones web personalizadas que combinan funcionalidad robusta con experiencias de
-            usuario intuitivas, siempre adhiriéndome a las mejores prácticas dedesarrollo y estándares 
-            actuales de la industria. 
-        </p>
-        <p class="presentacion__contenido__texto">* Colaborar estrechamente con clientes para entender sus necesidades específicas y convertir sus 
-            visiones en realidades digitales que impulsan el crecimiento de sus negocios.
-        </p> 
-        <p class="presentacion__contenido__texto">* Mantener un compromiso constante con el aprendizaje y la actualización en las últimas 
-        tecnologías y tendencias del desarrollo web, asegurando soluciones modernas y eficientes.
-        </p>
-        </p>
-        <p class="presentacion__contenido__texto">
-            Mi pasión por la tecnología va más allá del código. Me emociona ver cómo las soluciones que 
-            desarrollo ayudan a mis clientes a alcanzar sus objetivos comerciales y a conectar mejor con su 
-            audiencia. Cada proyecto es una oportunidad para crear algo único que no solo cumpla con los 
-            requisitos técnicos, sino que también inspire y motive a los usuarios finales.
-        </p>
-        <p class="presentacion__contenido__titulo">Tecnologías principales:</p>
-        <p class="presentacion__contenido__texto">* JavaScript: Desarrollo de funcionalidades dinámicas e interactivas</p>
-        <p class="presentacion__contenido__texto">* HTML5: Estructuración semántica y accesible</p>
-        <p class="presentacion__contenido__texto">* CSS3: Diseño responsivo y experiencias visuales atractivas</p>
-        <p class="presentacion__contenido__texto">* Metodologías ágiles y control de versiones con Git</p>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="SOBRE MÍ">SOBRE MÍ</span>
+                </h1>
+                <p class="hero-subtitle">Desarrollador, Innovador, Visionario</p>
+            </div>
+        </div>
     </section>
-    <img
-        class="presentacion__imagen"
-        src="./assets/jesus.jpg"
-        alt="Foto de Jesus Rivas desarrolando un proyecto para la institucion que labora"
-    />
-    </main>
+
+    <!-- Detailed About Section -->
+    <section class="about-detailed">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text-section">
+                    <h2>Mi Historia</h2>
+                    <p>Soy Jesús Rivas, un desarrollador Backend apasionado por crear soluciones tecnológicas innovadoras 
+                        que marquen la diferencia. Mi viaje en el mundo de la programación comenzó hace varios años, 
+                        y desde entonces he estado en constante evolución, adaptándome a las nuevas tecnologías y tendencias del mercado.</p>
+                    
+                    <p>Me especializo en el desarrollo de aplicaciones web modernas, interfaces de usuario intuitivas y sistemas backend 
+                        robustos. Mi enfoque siempre está en crear productos que no solo funcionen perfectamente, 
+                        sino que también brinden una experiencia excepcional al usuario.</p>
+                    
+                    <h3>Mi Filosofía</h3>
+                    <p>Creo firmemente que la tecnología debe ser accesible, elegante y funcional. 
+                        Cada línea de código que escribo está pensada para resolver problemas reales y mejorar la vida de las personas.</p>
+                </div>
+                
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Proyectos Completados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Disponibilidad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3/SASS</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-level" data-level="88"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experiencia</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Presente</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador backend</h3>
+                        <p>Desarrollo de aplicaciones web personalizadas para clientes diversos, 
+                            implementando soluciones innovadoras y tecnologías de vanguardia.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador Frontend</h3>
+                        <p>Especialización en React y Vue.js, creación de interfaces de usuario modernas y responsivas para aplicaciones web empresariales.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Desarrollador Junior</h3>
+                        <p>Inicio en el desarrollo web profesional, aprendizaje de mejores prácticas y colaboración en proyectos de equipo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-    <p>Desarrollado por Alura Latam en colaboracion con Jesus Rivas</p>
+        <div class="container">
+            <p>&copy; 2024 Jesús Rivas. Todos los derechos reservados.</p>
+            <p>Diseñado con 💙 y tecnología del futuro</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

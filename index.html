@@ -1,63 +1,238 @@
 <!DOCTYPE html>
-<html lang="es-sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__menu">
-        <a class="header__menu__link" href="index.html">Home</a>
-        <a class="header__menu__link" href="about.html">Sobre mí</a>
-      </nav>
-    </header>
-    <main class="presentacion">
-      <section class="presentacion__contenido">
-        <h1 class="presentacion__contenido__titulo">
-          Eleve su negocio digital a otro nivel
-          <strong class="titulo-destaque">con un Back-end Junior de calidad! </strong>
-        </h1>
-        <p class="presentacion__contenido__texto">
-          ¡Hola! Soy Jesus Rivas, desarrollador Back-end Junior con especialización en
-          JavaScript, HTML y CSS. Ayudo a pequeños negocios y diseñadores a
-          llevar a cabo buenas ideas. ¿Hablamos?
-        </p>
-        <div class="presentacion__enlaces">
-          <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes</h2>
-          <a
-            class="presentacion__enlaces__link"
-            href="https://github.com/Yeashua7"
-          >
-            <img src="./assets/github.png" />
-            Github
-          </a>
-          <a
-            class="presentacion__enlaces__link"
-            href="https://www.linkedin.com/in/jes%C3%BAs-rivas/"
-          >
-            <img src="./assets/linkedin.png" />
-            Linkedin
-          </a>
-          <a
-            class="presentacion__enlaces__link"
-            href="https://www.twitch.tv/yesshua7"
-          >
-            <img src="./assets/twitch.png" />
-            Twitch
-          </a>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús Rivas - Desarrollador Backend</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">JR</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="about.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </section>
-      <img
-        class="presentacion__imagen"
-        src="./assets/jesus.jpg"
-        alt="Foto de Jesus Rivas desarrollando un proyecto para la instutucion que labora"
-      />
-    </main>
+    </nav>
+
+    <!-- Audio Background -->
+    <audio id="background-music" autoplay loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <!-- Fallback para música de tecnología -->
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    
+    <!-- Control de Música -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="JESÚS RIVAS">JESÚS RIVAS</span>
+                </h1>
+                <p class="hero-subtitle">Desarrollador Backend & Innovador Tecnológico</p>
+                <p class="hero-description">
+                    Creando el futuro digital con código limpio, diseño innovador y tecnologías de vanguardia
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-element"></div>
+                    <div class="floating-element"></div>
+                    <div class="floating-element"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un desarrollador apasionado por la tecnología y la innovación. Me especializo en crear soluciones digitales que combinan funcionalidad, estética y experiencia de usuario excepcional.</p>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>Databases MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto Futurista</h3>
+                        <p>Aplicación web innovadora con tecnologías de vanguardia</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard Tecnológico</h3>
+                        <p>Panel de control con visualización de datos en tiempo real</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>D3.js</span>
+                            <span>API REST</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>App Móvil Innovadora</h3>
+                        <p>Aplicación móvil con IA y machine learning integrado</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>TensorFlow</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¡Hablemos!</h3>
+                    <p>¿Tienes un proyecto en mente? ¡Me encantaría escucharte!</p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:jesus@ejemplo.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>jesus@ejemplo.com</span>
+                        </a>
+                        
+                        <a href="https://wa.me/50312345678" class="contact-method whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+503 1234-5678</span>
+                        </a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/Yeashua7" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/jesus-rivas" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/jesus_rivas" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/jesus_rivas" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nombre</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Asunto</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span>Enviar Mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <p>Desarrollado por Alura Latam en colaboracion con Jesus Rivas</p>
+        <div class="container">
+            <p>&copy; 2024 Jesús Rivas. Todos los derechos reservados.</p>
+            <p>Diseñado con 💙 y tecnología del futuro</p>
+        </div>
     </footer>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
