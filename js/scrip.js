@@ -2,12 +2,10 @@
 let musicPlaying = true;
 let currentSection = 'home';
 
-// ===== DOM CONTENT LOADED =====
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
 
-// ===== INICIALIZACIÓN DE LA APP =====
 function initializeApp() {
     setupNavigation();
     setupMusicControl();
@@ -15,44 +13,32 @@ function initializeApp() {
     setupContactForm();
     setupSkillLevels();
     setupParticles();
-    
-    // Smooth scroll para enlaces internos
     setupSmoothScroll();
-    
-    // Inicializar animaciones
     animateOnScroll();
 }
 
-// ===== NAVEGACIÓN =====
 function setupNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-
-    // Toggle menu móvil
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
     }
-
-    // Cerrar menu al hacer click en un enlace
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger?.classList.remove('active');
             navMenu?.classList.remove('active');
         });
     });
-
-    // Highlight active section
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -61,7 +47,6 @@ function updateActiveNavLink() {
             current = section.getAttribute('id');
         }
     });
-
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -70,16 +55,11 @@ function updateActiveNavLink() {
     });
 }
 
-// ===== CONTROL DE MÚSICA =====
 function setupMusicControl() {
     const musicBtn = document.getElementById('music-toggle');
     const backgroundMusic = document.getElementById('background-music');
-    
     if (musicBtn && backgroundMusic) {
-        // Configurar música de fondo
         backgroundMusic.volume = 0.3;
-        
-        // Intentar reproducir automáticamente
         const playPromise = backgroundMusic.play();
         if (playPromise !== undefined) {
             playPromise.then(() => {
@@ -90,14 +70,12 @@ function setupMusicControl() {
                 updateMusicButton();
             });
         }
-
         musicBtn.addEventListener('click', toggleMusic);
     }
 }
 
 function toggleMusic() {
     const backgroundMusic = document.getElementById('background-music');
-    
     if (musicPlaying) {
         backgroundMusic.pause();
         musicPlaying = false;
@@ -105,14 +83,12 @@ function toggleMusic() {
         backgroundMusic.play();
         musicPlaying = true;
     }
-    
     updateMusicButton();
 }
 
 function updateMusicButton() {
     const musicBtn = document.getElementById('music-toggle');
     const icon = musicBtn.querySelector('i');
-    
     if (musicPlaying) {
         icon.className = 'fas fa-volume-up';
         musicBtn.style.background = 'var(--gradient-primary)';
@@ -122,20 +98,15 @@ function updateMusicButton() {
     }
 }
 
-// ===== SMOOTH SCROLL =====
 function setupSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Altura del navbar
-                
+            if (targetId.length > 1 && document.querySelector(targetId)) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                const offsetTop = targetSection.offsetTop - 70;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -145,13 +116,11 @@ function setupSmoothScroll() {
     });
 }
 
-// ===== ANIMACIONES DE SCROLL =====
 function setupScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -159,8 +128,6 @@ function setupScrollAnimations() {
             }
         });
     }, observerOptions);
-
-    // Observar elementos que necesitan animación
     const animateElements = document.querySelectorAll('.skill-item, .project-card, .stat-card, .timeline-item');
     animateElements.forEach(el => {
         el.classList.add('scroll-animate');
@@ -175,10 +142,8 @@ function animateOnScroll() {
     });
 }
 
-// ===== NIVELES DE HABILIDADES =====
 function setupSkillLevels() {
     const skillLevels = document.querySelectorAll('.skill-level');
-    
     skillLevels.forEach(skill => {
         const level = skill.getAttribute('data-level');
         if (level) {
@@ -187,20 +152,15 @@ function setupSkillLevels() {
     });
 }
 
-// ===== FORMULARIO DE CONTACTO =====
 function setupContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
-        
-        // Animación de labels
         const inputs = contactForm.querySelectorAll('input, textarea');
         inputs.forEach(input => {
             input.addEventListener('focus', () => {
                 input.parentElement.classList.add('focused');
             });
-            
             input.addEventListener('blur', () => {
                 if (!input.value) {
                     input.parentElement.classList.remove('focused');
@@ -212,22 +172,16 @@ function setupContactForm() {
 
 function handleFormSubmit(e) {
     e.preventDefault();
-    
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    
-    // Validación básica
     if (!data.name || !data.email || !data.message) {
         showNotification('Por favor, completa todos los campos requeridos.', 'error');
         return;
     }
-    
     if (!isValidEmail(data.email)) {
         showNotification('Por favor, ingresa un email válido.', 'error');
         return;
     }
-    
-    // Simular envío (aquí integrarías con tu backend)
     showNotification('¡Mensaje enviado exitosamente! Te contactaré pronto.', 'success');
     e.target.reset();
 }
@@ -238,7 +192,6 @@ function isValidEmail(email) {
 }
 
 function showNotification(message, type = 'info') {
-    // Crear elemento de notificación
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -247,8 +200,6 @@ function showNotification(message, type = 'info') {
             <span>${message}</span>
         </div>
     `;
-    
-    // Estilos de la notificación
     notification.style.cssText = `
         position: fixed;
         top: 100px;
@@ -264,15 +215,10 @@ function showNotification(message, type = 'info') {
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
     `;
-    
     document.body.appendChild(notification);
-    
-    // Animar entrada
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
-    // Remover después de 5 segundos
     setTimeout(() => {
         notification.style.transform = 'translateX(400px)';
         setTimeout(() => {
@@ -281,7 +227,6 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// ===== PARTÍCULAS FLOTANTES =====
 function setupParticles() {
     createFloatingParticles();
 }
@@ -298,10 +243,7 @@ function createFloatingParticles() {
         pointer-events: none;
         z-index: -1;
     `;
-    
     document.body.appendChild(particleContainer);
-    
-    // Crear partículas
     for (let i = 0; i < 20; i++) {
         createParticle(particleContainer);
     }
@@ -310,12 +252,10 @@ function createFloatingParticles() {
 function createParticle(container) {
     const particle = document.createElement('div');
     particle.className = 'particle';
-    
     const size = Math.random() * 4 + 2;
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
     const duration = Math.random() * 20 + 10;
-    
     particle.style.cssText = `
         position: absolute;
         width: ${size}px;
@@ -327,63 +267,13 @@ function createParticle(container) {
         opacity: 0.3;
         animation: floatParticle ${duration}s infinite linear;
     `;
-    
     container.appendChild(particle);
-    
-    // Remover y recrear partícula cuando termine la animación
     setTimeout(() => {
         container.removeChild(particle);
         createParticle(container);
     }, duration * 1000);
 }
 
-// ===== EFECTOS DE TYPING =====
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// ===== UTILIDADES =====
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// ===== EVENTOS DE RESIZE =====
-window.addEventListener('resize', debounce(() => {
-    // Reajustar elementos si es necesario
-    updateLayout();
-}, 250));
-
-function updateLayout() {
-    // Actualizar layout en cambios de tamaño
-    const particles = document.querySelector('.particles-container');
-    if (particles) {
-        particles.innerHTML = '';
-        for (let i = 0; i < 20; i++) {
-            createParticle(particles);
-        }
-    }
-}
-
-// ===== CSS DINÁMICO PARA ANIMACIONES =====
 const style = document.createElement('style');
 style.textContent = `
     @keyframes floatParticle {
@@ -402,52 +292,39 @@ style.textContent = `
             opacity: 0;
         }
     }
-    
     .notification-content {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
-    
     .particles-container {
         overflow: hidden;
     }
-    
     .particle {
         filter: blur(0.5px);
     }
 `;
 document.head.appendChild(style);
 
-// ===== EASTER EGG =====
 let konamiCode = [];
-const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
-
+const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.keyCode);
-    
     if (konamiCode.length > konamiSequence.length) {
         konamiCode.shift();
     }
-    
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         activateEasterEgg();
         konamiCode = [];
     }
 });
-
 function activateEasterEgg() {
     showNotification('🚀 ¡Código Konami activado! Modo desarrollador ON', 'success');
-    
-    // Efecto especial
     document.body.style.animation = 'rainbow 2s infinite';
-    
     setTimeout(() => {
         document.body.style.animation = '';
     }, 5000);
 }
-
-// Agregar animación rainbow
 const rainbowStyle = document.createElement('style');
 rainbowStyle.textContent = `
     @keyframes rainbow {
@@ -456,3 +333,6 @@ rainbowStyle.textContent = `
     }
 `;
 document.head.appendChild(rainbowStyle);
+
+console.log('🚀 Portafolio de Jesús Rivas cargado exitosamente!');
+console.log('💡 Tip: Prueba el código Konami: ↑↑↓↓←→←→BA');

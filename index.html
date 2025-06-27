@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Rivas - Desarrollador Backend</title>
+    <title>Jesús Rivas - Desarrollador Full Stack</title>
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,9 +11,9 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="nav-container container">
             <div class="nav-logo">
-                <span class="logo-text">JR</span>
+                <a href="index.html"><span class="logo-text">JR</span></a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Inicio</a></li>
@@ -31,8 +31,7 @@
 
     <!-- Audio Background -->
     <audio id="background-music" autoplay loop>
-        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
-        <!-- Fallback para música de tecnología -->
+        <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b5b1b6b2.mp3" type="audio/mpeg">
         Tu navegador no soporta audio HTML5.
     </audio>
     
@@ -45,12 +44,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="hero-container container">
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span class="glitch" data-text="JESÚS RIVAS">JESÚS RIVAS</span>
                 </h1>
-                <p class="hero-subtitle">Desarrollador Backend & Innovador Tecnológico</p>
+                <p class="hero-subtitle">Desarrollador Full Stack & Innovador Tecnológico</p>
                 <p class="hero-description">
                     Creando el futuro digital con código limpio, diseño innovador y tecnologías de vanguardia
                 </p>
@@ -75,9 +74,7 @@
             <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Soy un desarrollador apasionado por la tecnología y la innovación. 
-                        Me especializo en crear soluciones digitales que combinan funcionalidad, 
-                        estética y experiencia de usuario excepcional.</p>
+                    <p>Soy un desarrollador apasionado por la tecnología y la innovación. Me especializo en crear soluciones digitales que combinan funcionalidad, estética y experiencia de usuario excepcional.</p>
                     <div class="skills">
                         <div class="skill-item">
                             <i class="fab fa-html5"></i>
@@ -92,8 +89,16 @@
                             <span>JavaScript</span>
                         </div>
                         <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
                             <i class="fas fa-database"></i>
-                            <span>Databases MySQL</span>
+                            <span>Databases</span>
                         </div>
                     </div>
                 </div>
@@ -122,7 +127,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -139,7 +143,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
@@ -168,19 +171,16 @@
                 <div class="contact-info">
                     <h3>¡Hablemos!</h3>
                     <p>¿Tienes un proyecto en mente? ¡Me encantaría escucharte!</p>
-                    
                     <div class="contact-methods">
                         <a href="mailto:jesus@ejemplo.com" class="contact-method">
                             <i class="fas fa-envelope"></i>
-                            <span>jesusrimart7@gmail.com</span>
+                            <span>jesus@ejemplo.com</span>
                         </a>
-                        
                         <a href="https://wa.me/50312345678" class="contact-method whatsapp" target="_blank">
                             <i class="fab fa-whatsapp"></i>
-                            <span>+503 7937-0883</span>
+                            <span>+503 1234-5678</span>
                         </a>
                     </div>
-                    
                     <div class="social-links">
                         <a href="https://github.com/Yeashua7" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
@@ -196,28 +196,23 @@
                         </a>
                     </div>
                 </div>
-                
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
                         <label for="name">Nombre</label>
                     </div>
-                    
                     <div class="form-group">
                         <input type="email" id="email" name="email" required>
                         <label for="email">Email</label>
                     </div>
-                    
                     <div class="form-group">
                         <input type="text" id="subject" name="subject" required>
                         <label for="subject">Asunto</label>
                     </div>
-                    
                     <div class="form-group">
                         <textarea id="message" name="message" required></textarea>
                         <label for="message">Mensaje</label>
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">
                         <span>Enviar Mensaje</span>
                         <i class="fas fa-paper-plane"></i>
